@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Brazil from "../views/Brazil";
-import Hawaii from "../views/Hawaii";
-import Panama from "../views/Panama";
-import Jamaica from "../views/Jamaica";
+
+// import Hawaii from "../views/Hawaii";
+// import Panama from "../views/Panama";
+// import Jamaica from "../views/Jamaica";
 
 const routes = [
   {
@@ -23,22 +23,22 @@ const routes = [
   {
     path: "/brazil",
     name: "brazil",
-    component: Brazil,
+    component: () => import(/* webpackChunkName: "brazil" */ "../views/Brazil.vue"),
   },
   {
     path: "/hawaii",
     name: "hawaii",
-    component: Hawaii,
+    component:  () => import(/* webpackChunkName: "hawaii" */ "../views/Hawaii.vue"),
   },
   {
     path: "/panama",
     name: "panama",
-    component: Panama,
+    component:  () => import(/* webpackChunkName: "panama" */ "../views/Panama.vue"),
   },
   {
     path: "/jamaica",
     name: "jamaica",
-    component: Jamaica,
+    component:  () => import(/* webpackChunkName: "jamaica" */ "../views/Jamaica.vue"),
   }
 ];
 
